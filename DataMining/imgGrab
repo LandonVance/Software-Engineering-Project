@@ -16,7 +16,7 @@ do
     sed 's_http:__g' | sed 's_//www.__g' | \
     sed 's_[/.:]__g'`
 
-  java URLConnectionReader $var | \
+  echo $var | wget -q -O - -i -  | \
   sed 's_img_\n&_g' | grep "^img" | \
   sed 's_src[\s]*=[\s]*"_\n&_g' | \
   grep "^src" | \

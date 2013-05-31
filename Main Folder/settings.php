@@ -25,7 +25,7 @@ if (mysqli_connect_errno())
 if ($user)
 {
     $sql="INSERT INTO userPrefs (id, sports, finance, worldnews, entertainment, music, weather, contact)
-    VALUES ('$user','$_POST[sports]','$_POST[finannce]', '$_POST[worldnews]', '$_POST[entertainment]', '$_POST[music]', '$_POST[weather]', '$_POST[contact]')
+    VALUES ('$user','$_POST[sports]','$_POST[finance]', '$_POST[worldnews]', '$_POST[entertainment]', '$_POST[music]', '$_POST[weather]', '$_POST[contact]')
     ON DUPLICATE KEY UPDATE sports='$_POST[sports]', finance='$_POST[finance]', worldnews='$_POST[worldnews]', entertainment='$_POST[entertainment]', music='$_POST[music]',
     weather='$_POST[weather]', contact='$_POST[contact]'";
 

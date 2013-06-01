@@ -84,13 +84,13 @@ $user = $facebook->getUser();
 
 
 <div class="container">
-<div id="header"><img src="Top News Logo.jpg" alt="Top News" width="211" height="99" align="left" />
+<div id="header">
   <ul>
-    <p class="slogan">&nbsp;</p>
+    <p class="title">TOP NEWS</p>
     <p class="slogan">&quot;More News. More Often.&quot; </p>
-    <hr width="78%" />
+    <hr width="100%" />
   </ul>
-</div>	
+</div>
 
 <div id="page">
   <div class="title">
@@ -178,7 +178,7 @@ $user = $facebook->getUser();
 	src="home.html" 
     iframe width="100%"
     scrolling="yes"
-    height="500"
+    height="100%"
 	frameborder="0">
    </iframe>
 </div>

@@ -160,7 +160,7 @@ $user = $facebook->getUser();
   	</ul>
   </form>
 </div>
-  
+
   <script>
         function toggle(check, id)
         { if(!check.checked)
@@ -182,11 +182,10 @@ $user = $facebook->getUser();
 	frameborder="0">
    </iframe>
 </div>
+</div>
 
 <div id="footer">
 	&copy; 2013 TopNews &bull;&nbsp;Developed by Landon Vance, Krunal Shah, Nick Kacena, Jakob Klinger
-</div>
-
 </div>
 
 </body>

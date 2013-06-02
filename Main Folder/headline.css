@@ -1,10 +1,11 @@
 body {
+	background: #FFFFFF;
 	margin-left: 0px;
 	margin-top: 0px;
 }
 
 .header {
-	background-color: #000;
+	background-color: #FFFFFF;
 }
 
 ul#main
@@ -19,28 +20,27 @@ ul#main li.mainbar-element h3,
 ul#main li.mainbar-element a
 {
 	display: block;
-	width: 625px; /*695-40-15-15*/
+	width: 550px; /*695-40-15-15*/
 	padding: 5px 15px;
-	margin: 0;
 	margin-bottom: 5px;
 }
 ul#main li.mainbar-element h3
 {
-	color: #000000;
-	background: #333;
+	color: #FFFFFF;
+	background: #FFFFFF;
 	border: 1px solid #1a1a1a;
 	font-weight: normal;
 }
 ul#main li.mainbar-element a
 {
-	color: #999;
-	background: #222;
-	border: 1px solid #1a1a1a;
+	color: #000000;
+	background: FFFFFF;
+	/*border: 1px solid #1a1a1a;*/
 	text-decoration: none;
 	/*text-align: center;*/
 }
 ul#main li.mainbar-element a:hover {
-	color: #ff0000;
+	color: #852929;
 	font-size: 1em;
 	font-family: Helvetica, sans-serif;
 }

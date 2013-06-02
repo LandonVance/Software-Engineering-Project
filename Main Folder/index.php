@@ -19,13 +19,12 @@ $user = $facebook->getUser();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Top News</title>
-
 <link href="default.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="sliding_effects.js"></script>
 </head>
 <body>
-
+<div class="wrapper">
 <div id="fb-root"></div>
 <script>
   // Additional JS functions here
@@ -70,7 +69,6 @@ $user = $facebook->getUser();
         console.log('Good to see you, ' + response.name + '.');
     });
   }
-
   // Load the SDK Asynchronously
   (function(d){
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -80,19 +78,8 @@ $user = $facebook->getUser();
      ref.parentNode.insertBefore(js, ref);
    }(document));
 </script>
-
-
-
+<div id="topStripe"></div>
 <div class="container">
-<div id="header"><img src="Top News Logo.jpg" alt="Top News" width="211" height="99" align="left" />
-  <ul>
-    <p class="slogan">&nbsp;</p>
-    <p class="slogan">&quot;More News. More Often.&quot; </p>
-    <hr width="78%" />
-  </ul>
-</div>	
-
-<div id="page">
   <div class="title">
       <form method="get" action="http://search.freefind.com/find.html" id="search" target="main">
         <p>
@@ -174,20 +161,19 @@ $user = $facebook->getUser();
         }
   </script>
 <div id="content">
-	<iframe name="main" 
-	src="home.html" 
+	<iframe name="main"
+	src="home.html"
     iframe width="100%"
     scrolling="yes"
     height="500"
 	frameborder="0">
-   </iframe>
-</div>
+    </iframe>
 
-<div id="footer">
+</div>
+</div>
+</div>
+<div class="footer">
 	&copy; 2013 TopNews &bull;&nbsp;Developed by Landon Vance, Krunal Shah, Nick Kacena, Jakob Klinger
 </div>
-
-</div>
-
 </body>
 </html>

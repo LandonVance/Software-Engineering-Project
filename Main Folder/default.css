@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	background: #42413C url(bg.png);
+	background: #000000 url(bg.png);
 	font-family: Helvetica, sans-serif; font-size: 18px; line-height: 24px;
 }
 
@@ -10,7 +10,9 @@ body {
 	background-color: #000;
 	margin: auto; /* the auto value on the sides, coupled with the width, centers the layout */
 	width: 1000px;
+	height: 800px;
 }
+
 
 #header {
 	width: 1000px;
@@ -22,7 +24,7 @@ body {
 }
 
 #page {
-	width: 920px;
+	width: 1500px;
 	height: 650px;
 	margin-top: 0;
 	margin-right: 0;
@@ -54,28 +56,21 @@ body {
 }
 
 #content {
+	padding-left: 60px;
 	float: left;
 	width: 695px;
 	height: 500px;
-	padding-left: 40px;
+	margin: auto;	
 }
 
 
 #footer {
-	clear: both;
 	width: 920px;
-	background: url(images/img11.gif) no-repeat;
-	margin-top: 0;
-	margin-right: auto;
-	margin-bottom: 0;
-	margin-left: auto;
-	padding-top: 30px;
-	padding-right: 0;
-	padding-bottom: 30px;
-	padding-left: 0;
-	text-align: right;
+	text-align: center;
 	color: #F00;
 	font-size: 14px;
+	float: left;
+	padding-left: 110px;
 }
 
 /* search bar */

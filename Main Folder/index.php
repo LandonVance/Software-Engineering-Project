@@ -82,7 +82,6 @@ $user = $facebook->getUser();
 </script>
 
 
-
 <div class="container">
 <div id="header"><img src="Top News Logo.jpg" alt="Top News" width="211" height="99" align="left" />
   <ul>
@@ -90,7 +89,7 @@ $user = $facebook->getUser();
     <p class="slogan">&quot;More News. More Often.&quot; </p>
     <hr width="78%" />
   </ul>
-</div>	
+</div>
 
 <div id="page">
   <div class="title">
@@ -180,14 +179,12 @@ $user = $facebook->getUser();
     scrolling="yes"
     height="500"
 	frameborder="0">
-   </iframe>
-</div>
+    </iframe>
 
+</div>
 <div id="footer">
 	&copy; 2013 TopNews &bull;&nbsp;Developed by Landon Vance, Krunal Shah, Nick Kacena, Jakob Klinger
 </div>
-
 </div>
-
 </body>
 </html>

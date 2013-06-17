@@ -11,6 +11,16 @@ $facebook = new Facebook(array(
 // Get User ID
 $user = $facebook->getUser();
 
+if ($user) {
+  try {
+    // Proceed knowing you have a logged in user who's authenticated.
+    $user_profile = $facebook->api('/me');
+  } catch (FacebookApiException $e) {
+    error_log($e);
+    $user = null;
+  }
+}
+
 ?>
 
 
@@ -105,40 +115,37 @@ $user = $facebook->getUser();
            {
              echo "Failed to connect to MySQL: " . mysqli_connect_error();
            }
-           if ($user)
+           $sql="SELECT * FROM userPrefs where id='$user'";
+           $prefQuery = mysqli_query($con,$sql);
+           $result = mysqli_fetch_array($prefQuery);
+           $numResults = $prefQuery->num_rows;
+           if ($result['sports'] == '1' || !$user || $numResults == 0)
            {
-             $sql="SELECT * FROM userPrefs where id='$user'";
-             $prefQuery = mysqli_query($con,$sql);
-             $result = mysqli_fetch_array($prefQuery);
-             $numResults = $prefQuery->num_rows;
-             if ($result['sports'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li id="sports" class="sidebar-element" style="visibility:visible"><a href="espn.html" target="main">Sports</a></li>';
-             }
-             if ($result['finance'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li id="finance" class="sidebar-element" style="visibility:visible"><a href="finance.html" target="main">Finance</a></li>';
-             }
-             if ($result['worldnews'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li id="worldnews" class="sidebar-element" style="visibility:visible"><a href="worldnews.html" target="main">World News</a></li>';
-             }
-             if ($result['entertainment'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li id="entertainment" class="sidebar-element" style="visibility:visible"><a href="entertainment.html" target="main">Entertainment</a></li>';
-             }
-             if ($result['music'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li id="music" class="sidebar-element" style="visibility:visible"><a href="music.html" target="main">Music</a></li>';
-             }
-             if ($result['weather'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li id="weather" class="sidebar-element" style="visibility:visible"><a href="weather.html" target="main">Weather</a></li>';
-             }
-             if ($result['contact'] == '1' || !$user || $numResults == 0)
-             {
-               echo '<li class="sidebar-element" style="visibility:visible"><a href="contact.html" target="main">Contact Us</a></li>';
-             }
+             echo '<li id="sports" class="sidebar-element" style="visibility:visible"><a href="espn.html" target="main">Sports</a></li>';
+           }
+           if ($result['finance'] == '1' || !$user || $numResults == 0)
+           {
+             echo '<li id="finance" class="sidebar-element" style="visibility:visible"><a href="finance.html" target="main">Finance</a></li>';
+           }
+           if ($result['worldnews'] == '1' || !$user || $numResults == 0)
+           {
+             echo '<li id="worldnews" class="sidebar-element" style="visibility:visible"><a href="worldnews.html" target="main">World News</a></li>';
+           }
+           if ($result['entertainment'] == '1' || !$user || $numResults == 0)
+           {
+             echo '<li id="entertainment" class="sidebar-element" style="visibility:visible"><a href="entertainment.html" target="main">Entertainment</a></li>';
+           }
+           if ($result['music'] == '1' || !$user || $numResults == 0)
+           {
+             echo '<li id="music" class="sidebar-element" style="visibility:visible"><a href="music.html" target="main">Music</a></li>';
+           }
+           if ($result['weather'] == '1' || !$user || $numResults == 0)
+           {
+             echo '<li id="weather" class="sidebar-element" style="visibility:visible"><a href="weather.html" target="main">Weather</a></li>';
+           }
+           if ($result['contact'] == '1' || !$user || $numResults == 0)
+           {
+             echo '<li class="sidebar-element" style="visibility:visible"><a href="contact.html" target="main">Contact Us</a></li>';
            }
         ?>
         <li class="sidebar-element" style="visibility:visible"><a href="settings.html" target="main">Settings</a></li>
@@ -148,7 +155,7 @@ $user = $facebook->getUser();
   	</ul>
   </form>
 </div>
-  
+
   <script>
         function toggle(check, id)
         { if(!check.checked)
